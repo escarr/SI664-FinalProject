@@ -1,0 +1,24 @@
+{% extends "home/base_menu.html" %}
+
+{% block content %}
+    <h1>Tickets for Sale</h1>
+
+    <ul>
+    <li><a href="/football">Football Tickets</a>
+    <li><a href="/basketball">Basketball Tickets</a>
+    <li><a href="/hockey">Hockey Tickets</a>
+    <li><a href="/other">Other Tickets</a>
+    <ul>
+
+    <br>
+        <a href="{% url 'football:ticket_create' %}">Add a Ticket</a>
+
+
+
+    <img style="float:right; max-width:50%;" src="/media/tickets/blockM.png">
+
+
+
+
+{% endblock %}
+

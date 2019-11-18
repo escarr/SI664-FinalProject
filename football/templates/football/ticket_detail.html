@@ -1,0 +1,46 @@
+{% extends "football/base_menu.html" %}
+{% load humanize %} <!-- https://docs.djangoproject.com/en/2.1/ref/contrib/humanize -->
+{% block content %}
+<span style="float: right;">
+({{ ticket.updated_at|naturaltime }})
+{% if ticket.owner == user %}
+<a href="{% url 'football:ticket_update' ticket.id %}"><i class="fa fa-pencil"></i></a>
+<a href="{% url 'football:ticket_delete' ticket.id %}"><i class="fa fa-trash"></i></a>
+{% endif %}
+</span>
+<h1>Ticket Information</h1>
+<p>Sport: {{ ticket.sport }}</p>
+<p>Game: {{ ticket.game }}</p>
+<p>Section: {{ ticket.section }}</p>
+<p>Row: {{ ticket.row }} </p>
+<p>Seat: {{ ticket.seat }}</p>
+<p>Seller: {{ ticket.seller }}</p>
+<p>Price: ${{ ticket.price }}</p>
+<p>Preferred Payment Method: {{ ticket.payment_method }}</p>
+<p>Preferred MeetUp Spot: {{ ticket.meetup_spot }}</p>
+
+<p>
+<a href="{% url 'football:all' %}">Back to football tickets</a>
+</p>
+
+{% if user.is_authenticated %}
+<br clear="all"/>
+<p>
+{% load crispy_forms_tags %}
+<form method="post" action="{% url 'football:ticket_comment_create' ticket.id %}">
+    {% csrf_token %}
+    {{ comment_form|crispy }}
+<input type="submit" value="Submit">
+</form>
+</p>
+{% endif %}
+{% for comment in comments %}
+<p> {{ comment.text }}
+({{ comment.updated_at|naturaltime }})
+{% if user == comment.owner %}
+<a href="{% url 'football:ticket_comment_delete' comment.id %}"><i class="fa fa-trash"></i></a>
+{% endif %}
+</p>
+{% endfor %}
+
+{% endblock %}
