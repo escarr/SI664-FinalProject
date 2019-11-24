@@ -24,11 +24,11 @@
 <input type="hidden" name="next" value="{{ next }}" />
 </form>
 
-{% if settings.SOCIAL_AUTH_GITHUB_KEY %}
+{% if settings.SOCIAL_AUTH_FACEBOOK_KEY %}
 <hr/>
-<a class="btn btn-info" role="button" href="{% url 'social:begin' 'github' %}?next={{ next }}">
-    <i class="fa fa-github" aria-hidden="true"></i>
-    Login with GitHub</a>
+<a class="btn btn-info" role="button" href="{% url 'social:begin' 'facebook' %}?next={{ next }}">
+    <i class="fa fa-facebook" aria-hidden="true"></i>
+    Login with Facebook</a>
 {% endif %}
 
 <!-- ROOT_URLCONF {{ settings.ROOT_URLCONF }} -->

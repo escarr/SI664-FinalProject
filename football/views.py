@@ -58,4 +58,3 @@ class CommentDeleteView(OwnerDeleteView):
     def get_success_url(self):
         ticket = self.object.ticket
         return reverse('football:ticket_detail', args=[ticket.id])
-
