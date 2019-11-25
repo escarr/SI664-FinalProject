@@ -1,12 +1,12 @@
 {% extends "football/base_menu.html" %}
 {% block content %}
-<h1>Tickets</h1>
+<h1>Tickets Available for {{ game.name }}</h1>
 <p>
 {% if ticket_list %}
 <ul>
   {% for ticket in ticket_list %}
     <li>
-        <a href="{% url 'football:ticket_detail'  ticket.id %}"> Row: {{ ticket.row }}, Section: {{ ticket.seat }}, Price: ${{ticket.price }} </a>
+        <a href="{% url 'football:ticket_detail'  ticket.id %}"> Section: {{ ticket.section }}, Row: {{ ticket.row }}, Seat: {{ ticket.seat }}, Price: ${{ticket.price }} </a>
         {% if ticket.owner == user %}
         (<a href="{% url 'football:ticket_update' ticket.id %}">Edit</a> |
         <a href="{% url 'football:ticket_delete' ticket.id %}">Delete</a>)
@@ -20,6 +20,8 @@
 {% endif %}
 </p>
 
-<img style="float:right; max-width:50%;" src="/media/tickets/michigan_football.jpg">
+<a href="{% url 'football:all' %}">Back to football games</a>
+
+<img style="float:right; max-width:50%;" src="/media/tickets/FootballStadium.png">
 
 {% endblock %}

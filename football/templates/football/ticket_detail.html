@@ -20,7 +20,7 @@
 <p>Preferred MeetUp Spot: {{ ticket.meetup_spot }}</p>
 
 <p>
-<a href="{% url 'football:all' %}">Back to football tickets</a>
+<a href="{% url 'football:game_tickets' game.id %}">Back to football tickets</a>
 </p>
 
 {% if user.is_authenticated %}

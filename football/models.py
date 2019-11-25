@@ -1,6 +1,5 @@
 from django.db import models
 from django.core.validators import MinLengthValidator
-from django.contrib.auth.models import User
 from django.conf import settings
 
 class Sport(models.Model):
@@ -45,7 +44,7 @@ class Ticket(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return self.sport
+        return self.seller
 
 class Comment(models.Model) :
     text = models.TextField(
