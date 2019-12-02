@@ -47,6 +47,9 @@ INSTALLED_APPS = [
     'social_django',
     'home.apps.HomeConfig',
     'football.apps.FootballConfig',
+    'basketball.apps.BasketballConfig',
+    #'hockey.apps.HockeyConfig',
+    #'other.apps.OtherConfig',
 ]
 
 # When we get to crispy forms :)
