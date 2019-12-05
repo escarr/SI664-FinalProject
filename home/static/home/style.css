@@ -1,0 +1,15 @@
+.navbar-custom {
+    background-color: #000080;
+
+}
+.navbar-brand {
+    color: 	#FFD700;
+}
+
+.nav.navbar-nav.navbar-right li a {
+    color: #FFD700;
+}
+
+h1 {
+    color: #000080;
+}

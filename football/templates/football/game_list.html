@@ -6,7 +6,7 @@
 <ul>
   {% for game in game_list %}
     <li>
-        <a href="{% url 'football:game_tickets' game.id %}"> {{ game.name }} </a>
+        <a href="{% url 'football:game_tickets' game.id %}"> {{ game.name }} ({{ game.date }}) </a>
     </li>
   {% endfor %}
 </ul>

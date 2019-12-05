@@ -28,7 +28,7 @@ urlpatterns = [
     # path('profile'/, ),
     path('football/', include('football.urls')),
     path('basketball/', include('basketball.urls')),
-    #path('hockey/', include('hockey.urls')),
+    path('hockey/', include('hockey.urls')),
     #path('other/', include('other.urls')),
     path('admin/', admin.site.urls),  # Keep
     path('accounts/', include('django.contrib.auth.urls')),  # Keep

@@ -1,6 +1,6 @@
 {% extends "basketball/base_menu.html" %}
 {% block content %}
-<h1>Tickets Available for {{ game.name }}</h1>
+<h1>Tickets Available for {{ game.name }} ({{ game.date }}) </h1>
 <p>
 {% if ticket_list %}
 <ul>
@@ -20,7 +20,7 @@
 {% endif %}
 </p>
 
-<a href="{% url 'basketball:all' %}">Back to football games</a>
+<a href="{% url 'basketball:all' %}">Back to basketball games</a>
 
 <img style="float:right; max-width:50%;" src="/media/tickets/BasketballStadium.jpg">
 

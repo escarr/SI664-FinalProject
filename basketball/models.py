@@ -11,9 +11,10 @@ class Sport(models.Model):
 
 class Game(models.Model):
     name = models.CharField(max_length=200)
+    date = models.DateField("Date")
 
     def __str__(self):
-        return self.name
+        return self.name + " (" + str(self.date) + ")"
 
 class PaymentMethod(models.Model):
     name = models.CharField(max_length=200)

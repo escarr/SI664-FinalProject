@@ -48,7 +48,7 @@ INSTALLED_APPS = [
     'home.apps.HomeConfig',
     'football.apps.FootballConfig',
     'basketball.apps.BasketballConfig',
-    #'hockey.apps.HockeyConfig',
+    'hockey.apps.HockeyConfig',
     #'other.apps.OtherConfig',
 ]
 
@@ -87,8 +87,15 @@ TEMPLATES = [
     },
 ]
 
+
+
 WSGI_APPLICATION = 'tickets.wsgi.application'
 
+STATIC_URL = '/static/'
+
+STATICFILES_DIRS = [
+    '/django_projects/tickets/home/static',
+]
 
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases

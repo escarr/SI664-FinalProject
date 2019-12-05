@@ -1,0 +1,27 @@
+{% extends "hockey/base_menu.html" %}
+{% block content %}
+<h1>Tickets Available for {{ game.name }} ({{ game.date }}) </h1>
+<p>
+{% if ticket_list %}
+<ul>
+  {% for ticket in ticket_list %}
+    <li>
+        <a href="{% url 'hockey:ticket_detail'  ticket.id %}"> Section: {{ ticket.section }}, Price: ${{ticket.price }} </a>
+        {% if ticket.owner == user %}
+        (<a href="{% url 'hockey:ticket_update' ticket.id %}">Edit</a> |
+        <a href="{% url 'hockey:ticket_delete' ticket.id %}">Delete</a>)
+        </p>
+        {% endif %}
+    </li>
+  {% endfor %}
+</ul>
+{% else %}
+  <p>There are no tickets in the database.</p>
+{% endif %}
+</p>
+
+<a href="{% url 'hockey:all' %}">Back to hockey games</a>
+
+<img style="float:right; max-width:50%;" src="/media/tickets/HockeyStadium.png">
+
+{% endblock %}

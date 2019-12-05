@@ -1,6 +1,6 @@
 {% extends "football/base_menu.html" %}
 {% block content %}
-<h1>Tickets Available for {{ game.name }}</h1>
+<h1>Tickets Available for {{ game.name }} ({{ game.date }}) </h1>
 <p>
 {% if ticket_list %}
 <ul>

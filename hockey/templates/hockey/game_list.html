@@ -1,0 +1,20 @@
+{% extends "hockey/base_menu.html" %}
+{% block content %}
+<h1>Hockey Games</h1>
+<p>
+{% if game_list %}
+<ul>
+  {% for game in game_list %}
+    <li>
+        <a href="{% url 'hockey:game_tickets' game.id %}"> {{ game.name }} ({{ game.date }}) </a>
+    </li>
+  {% endfor %}
+</ul>
+{% else %}
+  <p>There are no games available.</p>
+{% endif %}
+</p>
+
+<img style="float:right; max-width:50%;" src="/media/tickets/michigan_hockey.jpg">
+
+{% endblock %}
